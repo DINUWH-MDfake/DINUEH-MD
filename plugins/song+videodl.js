@@ -36,7 +36,7 @@ let downloadUrl = down.dl_url
 
 //send audio message
 await conn.sendMessage(from,{audio: {downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})
-  
+await conn.sendMessage(from,{document: {downloadUrl},mimetype:"audio/mpeg",filename:data.title + ".mp3",caption:"> *POWERD BY DINU-EH-MD WITH DINUWH👻🫢*"},{quoted:mek}) 
 
 
 
@@ -82,7 +82,7 @@ let downloadUrl = down.dl_url
 
 //send video message
 await conn.sendMessage(from,{video: {downloadUrl},mimetype:"video/mp4"},{quoted:mek})
-  
+await conn.sendMessage(from,{document: {downloadUrl},mimetype:"video/mp4",filename:data.title + ".mp4",caption:"> *POWERD BY DINU-EH-MD WITH DINUWH👻🫢*},{quoted:mek})
 
 
 
