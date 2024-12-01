@@ -28,7 +28,14 @@ views: ${data.views}
 *MADE BY DINUWH-MD & POWERD BY DINUH👻*
 `
 await conn.sendMessage(frome,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
-timevideo16:24ප්‍රබාත්කුමාර
+
+//download audio
+
+let down = await fg.yta(url)
+let downloadUrl = down.dl_url
+
+//send audio message
+await.conn.sendMessage(from,{audio: {downloadUrl},mimetype:"audio/mpeg"},{quoted:mek})20.25 prbath
   }catch(e){
   console.log(e)
   reply(`${e}`)
