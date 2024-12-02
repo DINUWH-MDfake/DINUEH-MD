@@ -17,7 +17,7 @@ const util = require('util')
 const { sms,downloadMediaMessage } = require('./lib/msg')
 const axios = require('axios')
 const { File } = require('megajs')
-const prefix = '.'
+
 
 const ownerNumber = ['94728899640']
 
@@ -42,7 +42,13 @@ async function connectToWA() {
 //connect mongodb
 const connectDB = require('./lib/mongodb')
 connectDB();
-        
+
+//====================
+
+const {readEnv} = require('./lib/database/')
+const config =await readEnv();
+const prefix = config.PREFIX
+//=========================
 console.log("Connecting dinuwh-md wa bot 🧬...");
 const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
 var { version } = await fetchLatestBaileysVersion()
@@ -149,13 +155,13 @@ if(isReact) return
 m.react("🤍")
 }
         
-==============================WORK-TYPE======================================
+//==============================WORK-TYPE======================================
         
 if(!isOwner && config.MODE === "private") return
 if(!isOwner && isGroup && config.MODE === "inbox") return
 if(!isOwner && !isGroup && config.MODE === "groups") return
 
-==================
+//========================
            
 const events = require('./command')
 const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
