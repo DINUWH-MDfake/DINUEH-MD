@@ -64,7 +64,7 @@ ${menu.search}
 > *`POWERD BY DINU-EH-MD WITH DINUWH💁‍♂️`*
 `
 
-await conn.sendMessage(from,{text:madeMenu},{quoted:mek})
+await conn.sendMessage(from,{image:{url:"https://i.ibb.co/j5T1T9w/2812.jpg"},caption:madeMenu},{quoted:mek})
 
   
 }catch(e){
