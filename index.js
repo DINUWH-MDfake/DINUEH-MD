@@ -8,10 +8,10 @@ fetchLatestBaileysVersion,
 Browsers
 } = require('@whiskeysockets/baileys')
 
-const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('./lib/functions')
+const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require('../lib/functions')
 const fs = require('fs')
 const P = require('pino')
-const config = require('./config')
+const config = require('../config')
 const qrcode = require('qrcode-terminal')
 const util = require('util')
 const { sms,downloadMediaMessage } = require('./lib/msg')
@@ -19,7 +19,7 @@ const axios = require('axios')
 const { File } = require('megajs')
 
 
-const ownerNumber = ['94728899640']
+const ownerNumber = ['94728896048']
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
@@ -40,12 +40,12 @@ const port = process.env.PORT || 8000;
 
 async function connectToWA() {
 //connect mongodb
-const connectDB = require('./lib/mongodb')
+const connectDB = require('../lib/mongodb')
 connectDB();
 
 //====================
 
-const {readEnv} = require('./lib/database/')
+const {readEnv} = require('../lib/database/')
 const config =await readEnv();
 const prefix = config.PREFIX
 //=========================
